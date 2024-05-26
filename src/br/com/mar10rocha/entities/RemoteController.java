@@ -9,6 +9,9 @@ public class RemoteController implements Controller{
     public void muteAndUnmute(){
         this.mute = !mute;
     }
+    public void falseMuted(){
+        this.mute = false;
+    }
     public boolean isPowerOn(){
         return this.ligado;
     }

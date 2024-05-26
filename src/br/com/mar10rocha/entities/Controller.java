@@ -5,4 +5,5 @@ public interface Controller {
     public abstract void muteAndUnmute();
     public abstract boolean isMute();
     public abstract boolean isPowerOn();
+    public abstract void falseMuted();
 }

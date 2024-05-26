@@ -2,7 +2,6 @@ package br.com.mar10rocha.ui;
 
 import javax.swing.JPanel;
 import javax.swing.event.MouseInputAdapter;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.event.MouseEvent;
 
@@ -28,16 +27,15 @@ public class Content extends JPanel {
                     if(remoteController.isPowerOn() == true){
                         backgroundBase.setIcon(Imagens.powerOnImage);
                     }else{
+                        remoteController.falseMuted();
                         backgroundBase.setIcon(Imagens.powerOffImage);
                     }
                 }else if((e.getX() > 132 && e.getX() < 172) && (e.getY() > 27 && e.getY() < 60)){
                     remoteController.muteAndUnmute();
                     if(remoteController.isPowerOn() == true && remoteController.isMute() == true){
-                        System.out.println("Modo Mudo");
+                        backgroundBase.setIcon(Imagens.muteImage);
                     }else if(remoteController.isPowerOn() == true){
-                        System.out.println("Modo Mudo Dois");
-                    }else{
-                        System.out.println("Tela ta desligada man");
+                        backgroundBase.setIcon(Imagens.powerOnImage);
                     }
                 }
             }
